@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- SPDX-FileCopyrightText: 2026 Massimo Antonini -->
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mosaikit</title>
+<meta name="description" content="An open, modular platform for building web applications out of plugins.">
+<link rel="icon" href="/assets/mosaikit.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><img src="/assets/mosaikit.svg" alt="">Mosaikit</a>
+  <nav class="main">
+    <a href="/" aria-current="page">Home</a>
+    <a href="/marketplace/">Marketplace</a>
+    <a href="/mosaikit/">Documentation</a>
+    <a href="https://github.com/mosaikit/mosaikit/releases">Download</a>
+    <a href="https://github.com/mosaikit">GitHub</a>
+  </nav>
+</div></header>
+<div class="hero"><div class="wrap">
+  <h1>Build applications out of plugins</h1>
+  <p>Mosaikit gives you the foundations every application needs: sign-in, users, organizations,
+    languages, themes. Plugins add the rest, screens, services and data, piece by piece, like the
+    tiles of a mosaic.</p>
+  <a class="button primary" href="https://github.com/mosaikit/mosaikit/releases">Download</a>
+  <a class="button ghost" href="/mosaikit/">Read the documentation</a>
+  <a class="button ghost" href="/marketplace/">Browse plugins</a>
+</div></div>
+<main><div class="wrap">
+  <section>
+    <h2>Why Mosaikit</h2>
+    <div class="grid">
+      <div class="card"><h3>Plugins all the way down</h3><p>A plugin can extend the core and other plugins, so a feature can be extended without being forked.</p></div>
+      <div class="card"><h3>Any frontend framework</h3><p>Plugin interfaces are Web Components: each team picks the framework it prefers.</p></div>
+      <div class="card"><h3>Multi-tenant from day one</h3><p>Organizations, users, local sign-in and federation with external identity providers are in the core, with row-level security on the data.</p></div>
+      <div class="card"><h3>Runs where you need it</h3><p>A container image and a Helm chart for Kubernetes, and a portable distribution for a single machine, also offline.</p></div>
+      <div class="card"><h3>Open, and open to business</h3><p>The core is licensed under MPL-2.0: build open-source or commercial plugins on top of it.</p></div>
+      <div class="card"><h3>Verifiable</h3><p>Signed plugin packages and catalogs, a software bill of materials and signed checksums with every release.</p></div>
+    </div>
+  </section>
+  <section>
+    <h2>Build a plugin</h2>
+    <p>Generate a plugin with its manifest, its app and, with <code>--backend</code>, Java code and a
+      database schema. It builds against the plugin API published on Maven Central and npm.</p>
+    <pre>npx @mosaikit/create-plugin dev.acme.traffic --name "Traffic" --backend</pre>
+    <p>See the <a href="/mosaikit/developer/plugin-development.html">plugin development guide</a>.</p>
+  </section>
+</div></main>
+<footer><div class="wrap">Mosaikit is free software under the <a href="https://www.mozilla.org/MPL/2.0/">MPL-2.0</a>. · <a href="https://github.com/mosaikit/mosaikit.github.io">Source of this site</a></div></footer>
+</body>
+</html>
