@@ -12,7 +12,7 @@ Everything public of Mosaikit that is not in its own repository, served by GitHu
 |---|---|
 | `/` | the presentation of the project |
 | `/catalog/` | the signed catalog of the plugins of the project ([ADR-0021](https://github.com/mosaikit/mosaikit/blob/main/docs/adr/0021-minimal-marketplace.md)): `index.json`, `index.json.sig`, the packages and the public key of the publisher |
-| `/marketplace/` | the plugins of the catalog, read from its `index.json` |
+| `/plugins/` | the page for people: the plugins of the catalog, read from its `index.json`; installations read `/catalog/` |
 | `/schemas/` | the JSON schemas whose `$id` is under this site (plugin manifest, requirement) |
 | `/mosaikit/` | the documentation, published by [mosaikit](https://github.com/mosaikit/mosaikit) |
 

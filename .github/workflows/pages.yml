@@ -33,7 +33,7 @@ jobs:
       - name: Site
         run: |
           mkdir -p _site
-          cp -r index.html 404.html assets marketplace schemas _site/
+          cp -r index.html 404.html assets plugins schemas _site/
 
       - name: Read catalog.yml
         id: config
