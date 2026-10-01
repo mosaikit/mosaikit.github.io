@@ -47,8 +47,9 @@ function card(plugin) {
 
 try {
   const response = await fetch(`${CATALOG}index.json`, { cache: 'no-cache' });
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  const plugins = latest((await response.json()).plugins ?? []);
+  // 404: the catalog is not published yet.
+  if (!response.ok && response.status !== 404) throw new Error(`HTTP ${response.status}`);
+  const plugins = response.ok ? latest((await response.json()).plugins ?? []) : [];
   list.replaceChildren(
     ...(plugins.length > 0
       ? plugins.map(card)
