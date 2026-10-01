@@ -14,7 +14,7 @@ publisher-key: mosaikit
 
 # Repositories of the plugins, as owner/name. Prereleases are left out.
 plugins: []
-#  - mosaikit/app-catalog
+#  - mosaikit/app-data
 #  - mosaikit/app-maps
 #  - mosaikit/app-dashboards
 #  - mosaikit/app-processes
