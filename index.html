@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mosaikit</title>
-<meta name="description" content="An open, modular platform for building web applications out of plugins.">
+<meta name="description" content="A multi-tenant web platform built out of plugins: WebAssembly logic in a sandbox, isolated interfaces, PostgreSQL or SQLite.">
 <link rel="icon" href="/assets/mosaikit.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -16,40 +16,50 @@
   <nav class="main">
     <a href="/" aria-current="page">Home</a>
     <a href="/plugins/">Plugins</a>
-    <a href="/mosaikit/">Documentation</a>
+    <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/architecture.md">Documentation</a>
     <a href="https://github.com/mosaikit/mosaikit/releases">Download</a>
     <a href="https://github.com/mosaikit">GitHub</a>
   </nav>
 </div></header>
 <div class="hero"><div class="wrap">
   <h1>Build applications out of plugins</h1>
-  <p>Mosaikit gives you the foundations every application needs: sign-in, users, organizations,
-    languages, themes. Plugins add the rest, screens, services and data, piece by piece, like the
-    tiles of a mosaic.</p>
+  <p>Mosaikit is a multi-tenant web platform. The kernel gives every application what it needs:
+    tenants, users, roles, permissions, public links, KPIs. Plugins add the rest, one domain at a
+    time, like the tiles of a mosaic.</p>
   <a class="button primary" href="https://github.com/mosaikit/mosaikit/releases">Download</a>
-  <a class="button ghost" href="/mosaikit/">Read the documentation</a>
+  <a class="button ghost" href="https://github.com/mosaikit/mosaikit/blob/main/docs/architecture.md">Read the documentation</a>
   <a class="button ghost" href="/plugins/">Browse plugins</a>
 </div></div>
 <main><div class="wrap">
   <section>
     <h2>Why Mosaikit</h2>
     <div class="grid">
-      <div class="card"><h3>Plugins all the way down</h3><p>A plugin can extend the core and other plugins, so a feature can be extended without being forked.</p></div>
-      <div class="card"><h3>Any frontend framework</h3><p>Plugin interfaces are Web Components: each team picks the framework it prefers.</p></div>
-      <div class="card"><h3>Multi-tenant from day one</h3><p>Organizations, users, local sign-in and federation with external identity providers are in the core, with row-level security on the data.</p></div>
-      <div class="card"><h3>Runs where you need it</h3><p>A container image and a Helm chart for Kubernetes, and a portable distribution for a single machine, also offline.</p></div>
-      <div class="card"><h3>Open, and open to business</h3><p>The core is licensed under MPL-2.0: build open-source or commercial plugins on top of it.</p></div>
-      <div class="card"><h3>Verifiable</h3><p>Signed plugin packages and catalogs, a software bill of materials and signed checksums with every release.</p></div>
+      <div class="card"><h3>Plugins carry the domain</h3><p>The kernel knows nothing about notes, maps or documents. Each plugin brings its own logic, interface and data.</p></div>
+      <div class="card"><h3>Safe by construction</h3><p>Plugin logic runs as WebAssembly in a sandbox; its interface is isolated in an iframe with its own origin and content security policy.</p></div>
+      <div class="card"><h3>Multi-tenant from day one</h3><p>Three roles (Administrator, Tenant Manager, User), sharing with people and groups, public links and a quota for every tenant, in the core.</p></div>
+      <div class="card"><h3>PostgreSQL or SQLite</h3><p>The same isolation rules hold on PostgreSQL (row-level security) and on SQLite (query rewriting, triggers and an authorizer), so one product runs on a server or on a desktop.</p></div>
+      <div class="card"><h3>Runs where you need it</h3><p>A Windows desktop release, a Docker image with Compose files and a Kubernetes release, built with one command each.</p></div>
+      <div class="card"><h3>Make your own product</h3><p>A distribution is a separate project: its brand, its choice of plugins, its own plugins and the services that run next to the kernel.</p></div>
     </div>
   </section>
   <section>
-    <h2>Build a plugin</h2>
-    <p>Generate a plugin with its manifest, its app and, with <code>--backend</code>, Java code and a
-      database schema. It builds against the plugin API published on Maven Central and npm.</p>
-    <pre>npx @mosaikit/create-plugin dev.acme.traffic --name "Traffic" --backend</pre>
-    <p>See the <a href="/mosaikit/developer/plugin-development.html">plugin development guide</a>.</p>
+    <h2>Try it</h2>
+    <p>The repositories are public. With Rust, Node.js and PostgreSQL (or only SQLite) installed:</p>
+    <pre>git clone https://github.com/mosaikit/mosaikit
+git clone https://github.com/mosaikit/mosaikit-plugins
+cd mosaikit
+cargo xtask dev</pre>
+    <p>Create a plugin with <code>cargo xtask plugin new</code>; the README explains how to build,
+      sign and install it, and how to make a distribution.</p>
+  </section>
+  <section>
+    <h2>Repositories</h2>
+    <div class="grid">
+      <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit">mosaikit</a></h3><p>The kernel, the server, the shell and the plugin API, with the architecture and the tests.</p></div>
+      <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit-plugins">mosaikit-plugins</a></h3><p>The official plugins: <a href="/plugins/">documents, notes, tasks, contacts, maps and more</a>.</p></div>
+    </div>
   </section>
 </div></main>
-<footer><div class="wrap">Mosaikit is free software under the <a href="https://www.mozilla.org/MPL/2.0/">MPL-2.0</a>. · <a href="https://github.com/mosaikit/mosaikit.github.io">Source of this site</a></div></footer>
+<footer><div class="wrap">Mosaikit is free software under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. · <a href="https://github.com/mosaikit/mosaikit.github.io">Source of this site</a></div></footer>
 </body>
 </html>
