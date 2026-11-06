@@ -16,6 +16,7 @@
   <nav class="main">
     <a href="/" aria-current="page">Home</a>
     <a href="/plugins/">Plugins</a>
+    <a href="/devkit/">Dev kit</a>
     <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/architecture.md">Documentation</a>
     <a href="https://github.com/mosaikit/mosaikit/releases">Download</a>
     <a href="https://github.com/mosaikit">GitHub</a>
@@ -29,17 +30,18 @@
   <a class="button primary" href="https://github.com/mosaikit/mosaikit/releases">Download</a>
   <a class="button ghost" href="https://github.com/mosaikit/mosaikit/blob/main/docs/architecture.md">Read the documentation</a>
   <a class="button ghost" href="/plugins/">Browse plugins</a>
+  <a class="button ghost" href="/devkit/">Dev kit</a>
 </div></div>
 <main><div class="wrap">
   <section>
     <h2>Why Mosaikit</h2>
     <div class="grid">
-      <div class="card"><h3>Plugins carry the domain</h3><p>The kernel knows nothing about notes, maps or documents. Each plugin brings its own logic, interface and data.</p></div>
+      <div class="card"><h3>Plugins carry the domain</h3><p>The kernel knows nothing about notes, maps or documents. Each plugin brings its own logic, interface and data. The <a href="/plugins/">official plugins</a> cover documents, notes, tasks, contacts, maps, sites, layouts and a language.</p></div>
       <div class="card"><h3>Safe by construction</h3><p>Plugin logic runs as WebAssembly in a sandbox; its interface is isolated in an iframe with its own origin and content security policy.</p></div>
       <div class="card"><h3>Multi-tenant from day one</h3><p>Three roles (Administrator, Tenant Manager, User), sharing with people and groups, public links and a quota for every tenant, in the core.</p></div>
       <div class="card"><h3>PostgreSQL or SQLite</h3><p>The same isolation rules hold on PostgreSQL (row-level security) and on SQLite (query rewriting, triggers and an authorizer), so one product runs on a server or on a desktop.</p></div>
       <div class="card"><h3>Runs where you need it</h3><p>A Windows desktop release, a Docker image with Compose files and a Kubernetes release, built with one command each.</p></div>
-      <div class="card"><h3>Make your own product</h3><p>A distribution is a separate project: its brand, its choice of plugins, its own plugins and the services that run next to the kernel.</p></div>
+      <div class="card"><h3>Make your own product</h3><p>A product is a separate project on the compiled platform: its brand, its choice of plugins, its own plugins and its defaults. The <a href="/devkit/">dev kit</a> covers it.</p></div>
     </div>
   </section>
   <section>
@@ -49,14 +51,14 @@
 git clone https://github.com/mosaikit/mosaikit-plugins
 cd mosaikit
 cargo xtask dev</pre>
-    <p>Create a plugin with <code>cargo xtask plugin new</code>; the README explains how to build,
-      sign and install it, and how to make a distribution.</p>
+    <p>To write a plugin or a product without the platform source, use the <a href="/devkit/">dev kit</a>:
+      the <code>mosaikit-plugin</code> tool, the SDK, the UI API and the documents.</p>
   </section>
   <section>
     <h2>Repositories</h2>
     <div class="grid">
-      <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit">mosaikit</a></h3><p>The kernel, the server, the shell and the plugin API, with the architecture and the tests.</p></div>
-      <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit-plugins">mosaikit-plugins</a></h3><p>The official plugins: <a href="/plugins/">documents, notes, tasks, contacts, maps and more</a>.</p></div>
+      <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit">mosaikit</a></h3><p>The kernel, the server, the shell, the plugin API and the dev kit documents, with the architecture and the tests.</p></div>
+      <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit-plugins">mosaikit-plugins</a></h3><p>The official plugins: <a href="/plugins/">documents, notes, tasks, contacts, maps, sites, layouts and a language pack</a>.</p></div>
     </div>
   </section>
 </div></main>

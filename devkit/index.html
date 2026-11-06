@@ -1,0 +1,73 @@
+<!doctype html>
+<!-- SPDX-FileCopyrightText: 2026 Massimo Antonini -->
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dev kit · Mosaikit</title>
+<meta name="description" content="The Mosaikit development kit: documents, tools and how to verify a download.">
+<link rel="icon" href="/assets/mosaikit.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><img src="/assets/mosaikit.svg" alt="">Mosaikit</a>
+  <nav class="main">
+    <a href="/">Home</a>
+    <a href="/plugins/">Plugins</a>
+    <a href="/devkit/" aria-current="page">Dev kit</a>
+    <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/architecture.md">Documentation</a>
+    <a href="https://github.com/mosaikit/mosaikit/releases">Download</a>
+    <a href="https://github.com/mosaikit">GitHub</a>
+  </nav>
+</div></header>
+<main><div class="wrap">
+  <h2>Dev kit</h2>
+  <p>The kit is for whoever writes, tests, signs and ships a plugin for Mosaikit, or builds a product on the platform,
+    without the source code of the platform. It holds the <code>mosaikit-plugin</code> command-line tool, the plugin SDK
+    (Rust), the plugin UI API (<code>@mosaikit/plugin-api</code>), the documents, examples and Docker files. Each release
+    of the platform has its kit archives on the <a href="https://github.com/mosaikit/mosaikit/releases">releases page</a>.
+    Start from the <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/getting-started.md">Getting started</a> document; the index is the
+    <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/README.md">dev kit README</a>.</p>
+  <h3>Documents</h3>
+  <div class="grid">
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/getting-started.md">Getting started</a></h3><p>Install the kit, make a first plugin, the development loop</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/concepts.md">Concepts</a></h3><p>Tenants, roles, ownership and sharing, resources, settings, what a plugin may and may not do</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/manifest.md">Manifest reference</a></h3><p>Every field of plugin.toml, with its rule; the five kinds</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/logic.md">Logic reference</a></h3><p>ABI, commands, hooks, host operations, errors, limits, MockHost</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/ui.md">UI reference</a></h3><p>The Msk client, mountCrud, gridTable, emptyState, pageHead, theme, i18n, accessibility</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/data.md">Data</a></h3><p>Migrations on PostgreSQL and SQLite, the security context, RLS, the SQL guard</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/security.md">Security</a></h3><p>Origins and CSP, permissions, what is signed, secrets, untrusted content</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/extensions-layouts.md">Extensions and layouts</a></h3><p>Extend another plugin; write a layout or a language pack</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/ui-guidelines.md">UI guidelines</a></h3><p>The rules of the shell that apply to plugin pages</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/packaging.md">Packaging and signing</a></h3><p>.mskp, keys, trusted keys, blocklist, versions, updates, the registry index</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/signing.md">Developer signing</a></h3><p>Make a key, trust a publisher, revoke a key</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/releasing.md">Releasing the kit</a></h3><p>The kit archives, checking a download, self-update, cargo install, a private registry</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/testing.md">Testing</a></h3><p>Unit tests, validate --strict, @mosaikit/plugin-testing, CI recipes</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/building-an-application.md">Building an application</a></h3><p>A product on the compiled base: brand, plugins, defaults, first start, build, upgrades, tests</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/reference-product.md">Reference product</a></h3><p>A small complete product, step by step</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/product-licensing.md">Licensing and responsibilities</a></h3><p>What a publisher may redistribute, names and brands, who supports what (draft)</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/troubleshooting.md">Troubleshooting</a></h3><p>The errors the kernel and the tools return, with cause and fix</p></div>
+    <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/changelog.md">Changelog and compatibility</a></h3><p>Versions of kit, platform, SDK and UI API; deprecations</p></div>
+  </div>
+  <h3 style="margin-top:32px">Verify a download</h3>
+  <p>A release lists, for each kit archive, a signature (<code>&lt;archive&gt;.sig</code>), and the files
+    <code>SHA256SUMS</code> and <code>SHA256SUMS.sig</code>. Put the files you downloaded in one folder and run:</p>
+  <pre>sha256sum -c SHA256SUMS --ignore-missing
+mosaikit-plugin self-update --from-dir &lt;folder with the files&gt; --trusted-key &lt;public key&gt; --check</pre>
+  <p>The first command checks the hash of the archive. The second checks the signature of <code>SHA256SUMS</code>
+    against the public key you pass, then prints the breaking changes of the release. Details:
+    <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/releasing.md">Releasing the kit</a>.</p>
+  <h3>Trust the key</h3>
+  <p>The official kit archives and the official <code>.mskp</code> packages are signed with the same ed25519 key. Its
+    public key is in <code>trusted_key.txt</code> inside every kit archive, and an installed kit uses it to check its own
+    updates (<code>mosaikit-plugin self-update</code>). To be sure the key is not one that came with a tampered archive,
+    compare it with the key published on this page. A server installs a package only if its signature verifies and the
+    key is in its <code>trusted_keys</code> list (see <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/packaging.md">Packaging and signing</a> and
+    <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/signing.md">Developer signing</a>).</p>
+  <p><strong>Public key: to be published with the first official release.</strong></p>
+</div></main>
+<footer><div class="wrap">Mosaikit is free software under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. · <a href="https://github.com/mosaikit/mosaikit.github.io">Source of this site</a></div></footer>
+</body>
+</html>
