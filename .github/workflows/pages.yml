@@ -25,7 +25,7 @@ jobs:
       - name: Site
         run: |
           mkdir -p _site
-          cp -r index.html 404.html assets plugins _site/
+          cp -r index.html 404.html assets plugins devkit _site/
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
 
   deploy:

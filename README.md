@@ -10,6 +10,7 @@ The public site of Mosaikit, served by GitHub Pages at <https://mosaikit.github.
 |---|---|
 | `/` | the presentation of the project |
 | `/plugins/` | the official plugins ([mosaikit-plugins](https://github.com/mosaikit/mosaikit-plugins)) |
+| `/devkit/` | the plugin development kit: documents, checking a download, trusting the key |
 
 The pages are plain HTML and CSS without a build. `.github/workflows/pages.yml` publishes them at every push
 and by hand. The documentation lives in the repository [mosaikit](https://github.com/mosaikit/mosaikit)
