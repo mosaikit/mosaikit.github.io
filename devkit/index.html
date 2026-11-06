@@ -66,7 +66,9 @@ mosaikit-plugin self-update --from-dir &lt;folder with the files&gt; --trusted-k
     compare it with the key published on this page. A server installs a package only if its signature verifies and the
     key is in its <code>trusted_keys</code> list (see <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/packaging.md">Packaging and signing</a> and
     <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/signing.md">Developer signing</a>).</p>
-  <p><strong>Public key: to be published with the first official release.</strong></p>
+  <p><strong>Public key (ed25519, base64):</strong></p>
+  <pre><code>NFOuLYouMh4B5PX99+IAf40mlQf1gHRXTXuqaOXyVCc=</code></pre>
+  <p>It is the key that signs the kit release <code>kit-v1.0.0-rc1</code> and it is the content of <code>trusted_key.txt</code> in its archives. To check a download without installing it: <code>mosaikit-plugin self-update --check --from-dir &lt;folder with the archive, SHA256SUMS and SHA256SUMS.sig&gt; --trusted-key NFOuLYouMh4B5PX99+IAf40mlQf1gHRXTXuqaOXyVCc=</code>.</p>
 </div></main>
 <footer><div class="wrap">Mosaikit is free software under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. · <a href="https://github.com/mosaikit/mosaikit.github.io">Source of this site</a></div></footer>
 </body>
