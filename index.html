@@ -5,8 +5,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mosaikit</title>
-<meta name="description" content="A multi-tenant web platform built out of plugins: WebAssembly logic in a sandbox, isolated interfaces, PostgreSQL or SQLite.">
+<title>Mosaikit · Build enterprise applications out of plugins</title>
+<meta name="description" content="Build enterprise applications and plugins on a multi-tenant platform: tenants, roles, sharing, single sign-on, KPIs and a sandbox for plugin code, on PostgreSQL or SQLite, on the desktop or in Docker.">
 <link rel="icon" href="/assets/mosaikit.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
@@ -22,43 +22,107 @@
     <a href="https://github.com/mosaikit">GitHub</a>
   </nav>
 </div></header>
-<div class="hero"><div class="wrap">
-  <h1>Build applications out of plugins</h1>
-  <p>Mosaikit is a multi-tenant web platform. The kernel gives every application what it needs:
-    tenants, users, roles, permissions, public links, KPIs. Plugins add the rest, one domain at a
-    time, like the tiles of a mosaic.</p>
-  <a class="button primary" href="https://github.com/mosaikit/mosaikit/releases">Download</a>
-  <a class="button ghost" href="https://github.com/mosaikit/mosaikit/blob/main/docs/architecture.md">Read the documentation</a>
-  <a class="button ghost" href="/plugins/">Browse plugins</a>
-  <a class="button ghost" href="/devkit/">Dev kit</a>
+<div class="hero"><div class="wrap hero-grid">
+  <div>
+    <p class="eyebrow">Open platform for enterprise applications</p>
+    <h1>Build enterprise applications out of plugins</h1>
+    <p>Mosaikit gives every application what it always needs and nobody wants to write again: tenants, users, roles,
+      sharing, single sign-on, quotas, KPIs and a safe place for third-party code. You write only your domain,
+      as a plugin, or ship a whole product with your own name and brand.</p>
+    <a class="button primary" href="#start">Start building</a>
+    <a class="button ghost" href="https://github.com/mosaikit/mosaikit/releases">Download</a>
+    <a class="button ghost" href="/plugins/">Browse plugins</a>
+  </div>
+  <figure class="shot hero-shot"><div class="bar"><i></i><i></i><i></i></div>
+    <img src="/assets/shots/02-home.png" width="1440" height="900" alt="The home page of a tenant in Mosaikit, with the apps of the tenant"></figure>
 </div></div>
 <main><div class="wrap">
+  <ul class="stats">
+    <li><strong>3 roles</strong><span>Administrator, Tenant Manager, User</span></li>
+    <li><strong>2 databases</strong><span>PostgreSQL and SQLite, same rules</span></li>
+    <li><strong>3 releases</strong><span>Desktop, Docker, Kubernetes</span></li>
+    <li><strong>WebAssembly</strong><span>plugin logic in a sandbox</span></li>
+  </ul>
+
   <section>
-    <h2>Why Mosaikit</h2>
+    <h2>Everything an enterprise application needs, already there</h2>
+    <p class="lead">The kernel knows nothing about your domain, and that is the point: it does the platform work once, correctly, for every plugin and every product.</p>
     <div class="grid">
-      <div class="card"><h3>Plugins carry the domain</h3><p>The kernel knows nothing about notes, maps or documents. Each plugin brings its own logic, interface and data. The <a href="/plugins/">official plugins</a> cover documents, notes, tasks, contacts, maps, sites, layouts and a language.</p></div>
-      <div class="card"><h3>Safe by construction</h3><p>Plugin logic runs as WebAssembly in a sandbox; its interface is isolated in an iframe with its own origin and content security policy.</p></div>
-      <div class="card"><h3>Multi-tenant from day one</h3><p>Three roles (Administrator, Tenant Manager, User), sharing with people and groups, public links and a quota for every tenant, in the core.</p></div>
-      <div class="card"><h3>PostgreSQL or SQLite</h3><p>The same isolation rules hold on PostgreSQL (row-level security) and on SQLite (query rewriting, triggers and an authorizer), so one product runs on a server or on a desktop.</p></div>
-      <div class="card"><h3>Runs where you need it</h3><p>A Windows desktop release, a Docker image with Compose files and a Kubernetes release, built with one command each.</p></div>
-      <div class="card"><h3>Make your own product</h3><p>A product is a separate project on the compiled platform: its brand, its choice of plugins, its own plugins and its defaults. The <a href="/devkit/">dev kit</a> covers it.</p></div>
+      <div class="card"><h3>Multi-tenant from day one</h3><p>Every customer, department or project is a tenant, with its own people, groups, policies, quotas and brand. Isolation is enforced in the database, not in the application code.</p></div>
+      <div class="card"><h3>Three roles, real permissions</h3><p>Administrator for the platform, Tenant Manager for a tenant, User for the work. Resources are shared with people and groups at three levels (read, write, manage), with inheritance on folders.</p></div>
+      <div class="card"><h3>Single sign-on with OpenID Connect</h3><p>A tenant signs in with local accounts or with its own identity provider, such as Keycloak. Administrators always keep a local account with a second factor (TOTP).</p></div>
+      <div class="card"><h3>Public links</h3><p>Share a resource outside the tenant with a link that is read only, expires, can have a password and counts the visits.</p></div>
+      <div class="card"><h3>KPIs and an activity log</h3><p>Per tenant for the Tenant Manager and across tenants for the Administrator: metadata and aggregates, never the contents.</p></div>
+      <div class="card"><h3>Quotas and usage</h3><p>Limits for every tenant on what the kernel can measure, shown to the people who reach them, so a tenant never surprises you.</p></div>
+      <div class="card"><h3>Notifications, search, trash</h3><p>The bell, the global search, the trash with restore and the help of the shell work for every plugin without a line of code.</p></div>
+      <div class="card"><h3>Your language, your look</h3><p>The interface is in English with Italian available, and a language is just a plugin. Light and dark themes, and the colours of the tenant.</p></div>
+      <div class="card"><h3>One brand, yours</h3><p>Name, logo, favicon, colours, texts of the sign-in page and the desktop icon come from one <code>brand.toml</code>. Your users see your product, not ours.</p></div>
     </div>
   </section>
-  <section>
-    <h2>Try it</h2>
-    <p>The repositories are public. With Rust, Node.js and PostgreSQL (or only SQLite) installed:</p>
-    <pre>git clone https://github.com/mosaikit/mosaikit
-git clone https://github.com/mosaikit/mosaikit-plugins
-cd mosaikit
-cargo xtask dev</pre>
-    <p>To write a plugin or a product without the platform source, use the <a href="/devkit/">dev kit</a>:
-      the <code>mosaikit-plugin</code> tool, the SDK, the UI API and the documents.</p>
+
+  <section class="tour">
+    <h2>See it</h2>
+    <div class="split">
+      <figure class="shot"><div class="bar"><i></i><i></i><i></i></div><img loading="lazy" src="/assets/shots/01-signin.png" width="1440" height="900" alt="The sign-in page of Mosaikit"></figure>
+      <div><h3>A sign-in page that looks like your product</h3><p>Choose the tenant, sign in with a local account or with the identity provider of the tenant. The page takes the theme and the brand of the platform, and of the tenant as soon as it is known.</p></div>
+    </div>
+    <div class="split flip">
+      <figure class="shot"><div class="bar"><i></i><i></i><i></i></div><img loading="lazy" src="/assets/shots/06-sharing.png" width="1440" height="900" alt="Sharing an item with people, groups and a public link"></figure>
+      <div><h3>Sharing that every plugin gets for free</h3><p>People, groups, three levels, inheritance and public links belong to the kernel. A plugin declares a resource and its users can share it, without a line of permission code.</p></div>
+    </div>
+    <div class="split">
+      <figure class="shot"><div class="bar"><i></i><i></i><i></i></div><img loading="lazy" src="/assets/shots/03-notes.png" width="1440" height="900" alt="The Notes plugin with a list of notes"></figure>
+      <div><h3>Plugins that feel part of the product</h3><p>A plugin brings its logic, its pages and its data. Its interface runs in an isolated frame, yet receives the language, the theme and the colours of the tenant, so it looks native.</p></div>
+    </div>
+    <div class="split flip">
+      <figure class="shot"><div class="bar"><i></i><i></i><i></i></div><img loading="lazy" src="/assets/shots/07-admin.png" width="1440" height="900" alt="The Administrator manages the tenants of the platform"></figure>
+      <div><h3>Operate many tenants from one place</h3><p>The Administrator creates tenants, follows their members, items and space, chooses their sign-in and plugins and their quotas, and watches the aggregates of the whole platform.</p></div>
+    </div>
+    <div class="split">
+      <figure class="shot"><div class="bar"><i></i><i></i><i></i></div><img loading="lazy" src="/assets/shots/08-plugins.png" width="1440" height="900" alt="The catalogue of plugins of a tenant"></figure>
+      <div><h3>A catalogue of signed plugins</h3><p>The Administrator makes plugins available; the Tenant Manager turns them on for the people of the tenant and decides their permissions. Every package is signed, and a blocklist can stop a bad one everywhere.</p></div>
+    </div>
   </section>
+
   <section>
-    <h2>Repositories</h2>
+    <h2>Why developers build on it</h2>
     <div class="grid">
-      <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit">mosaikit</a></h3><p>The kernel, the server, the shell, the plugin API and the dev kit documents, with the architecture and the tests.</p></div>
-      <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit-plugins">mosaikit-plugins</a></h3><p>The official plugins: <a href="/plugins/">documents, notes, tasks, contacts, maps, sites, layouts and a language pack</a>.</p></div>
+      <div class="card"><h3>Write only your domain</h3><p>No tenants, no login, no permissions, no admin screens, no multi-tenant database design. A plugin is a manifest, some logic and a UI.</p></div>
+      <div class="card"><h3>Safe by construction</h3><p>Logic runs as WebAssembly with limited fuel and memory; files, network and clock only through the host. SQL is limited to the tables of the plugin. The UI lives on its own origin with a strict content security policy.</p></div>
+      <div class="card"><h3>The same rules on PostgreSQL and SQLite</h3><p>Row-level security on PostgreSQL; query rewriting, triggers and an authorizer on SQLite. Develop on your laptop, deploy on a server.</p></div>
+      <div class="card"><h3>Server, desktop or cluster</h3><p>A Windows desktop app, a Docker image with Compose files and a Kubernetes release: one command each, from the compiled platform.</p></div>
+      <div class="card"><h3>A stable, versioned API</h3><p>Plugins declare the platform versions they need. The plugin API has compatibility rules and a conformance check, so an upgrade of the platform does not break your plugin silently.</p></div>
+      <div class="card"><h3>No platform source needed</h3><p>The Dev Kit has the tools, the SDK, the UI API, three commented examples and the documents. You never clone the kernel.</p></div>
+    </div>
+  </section>
+
+  <section id="start" class="start">
+    <h2>Try it: a plugin in ten minutes, a product in a day</h2>
+    <p class="lead">Download the <a href="https://github.com/mosaikit/mosaikit/releases">Dev Kit</a> for your system, put its <code>bin/</code> folder on your <code>PATH</code>, and choose.</p>
+    <div class="grid two">
+      <div class="card path"><span class="badge">Plugin</span><h3>Add a feature to Mosaikit</h3>
+<pre>mosaikit-plugin new my-plugin
+cd my-plugin
+mosaikit-plugin dev</pre>
+        <p>A running server with test users, your plugin loaded and reloaded at every change. Start from a new plugin or copy a commented example (<code>--example todo</code>).</p>
+        <p><a class="button primary small" href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/getting-started.md">Getting started</a></p></div>
+      <div class="card path"><span class="badge">Product</span><h3>Ship your own application</h3>
+<pre>mosaikit-product new acme-maps
+cd acme-maps
+mosaikit-product dev --base 1.0.2
+mosaikit-product build docker --base 1.0.2 --build</pre>
+        <p>Your name, brand, plugins and defaults on the compiled platform. The Base is downloaded and checked for you; you only add Docker to ship.</p>
+        <p><a class="button primary small" href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/reference-product.md">Build a product</a></p></div>
+    </div>
+    <p class="notice">The Dev Kit is the only download. Read <a href="/devkit/">how to check it</a>, then the <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/README.md">documents</a>. Questions and problems: <a href="https://github.com/mosaikit/mosaikit/issues">GitHub issues</a>.</p>
+  </section>
+
+  <section>
+    <h2>Official plugins</h2>
+    <p>Documents, notes, tasks, contacts, maps, sites, layouts and a language pack, to use as they are or as examples. <a href="/plugins/">Browse all the plugins</a>.</p>
+    <div class="grid">
+      <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit">mosaikit</a></h3><p>The kernel, the server, the shell, the plugin API and the Dev Kit documents, with the architecture and the tests.</p></div>
+      <div class="card"><h3><a href="https://github.com/mosaikit/mosaikit-plugins">mosaikit-plugins</a></h3><p>The official plugins, each one a standalone project you can read, copy and change.</p></div>
     </div>
   </section>
 </div></main>
