@@ -25,9 +25,10 @@
 <main><div class="wrap">
   <h2>Dev kit</h2>
   <p>The kit is for whoever writes, tests, signs and ships a plugin for Mosaikit, or builds a product on the platform,
-    without the source code of the platform. It holds the <code>mosaikit-plugin</code> command-line tool, the plugin SDK
+    without the source code of the platform. It holds the <code>mosaikit-plugin</code> and <code>mosaikit-product</code> command-line tools, the plugin SDK
     (Rust), the plugin UI API (<code>@mosaikit/plugin-api</code>), the documents, examples and Docker files. Each release
-    of the platform has its kit archives on the <a href="https://github.com/mosaikit/mosaikit/releases">releases page</a>.
+    of the platform has its kit archives on the <a href="https://github.com/mosaikit/mosaikit/releases">releases page</a>. The kit is the only download: a product is built on the compiled platform (the Base), which
+    <code>mosaikit-product --base &lt;version&gt;</code> fetches, checks and keeps for you.
     Start from the <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/getting-started.md">Getting started</a> document; the index is the
     <a href="https://github.com/mosaikit/mosaikit/blob/main/docs/devkit/README.md">dev kit README</a>.</p>
   <h3>Documents</h3>
@@ -70,6 +71,6 @@ mosaikit-plugin self-update --from-dir &lt;folder with the files&gt; --trusted-k
   <pre><code>NFOuLYouMh4B5PX99+IAf40mlQf1gHRXTXuqaOXyVCc=</code></pre>
   <p>It is the key that signs the kit release <code>kit-v1.0.0-rc1</code> and it is the content of <code>trusted_key.txt</code> in its archives. To check a download without installing it: <code>mosaikit-plugin self-update --check --from-dir &lt;folder with the archive, SHA256SUMS and SHA256SUMS.sig&gt; --trusted-key NFOuLYouMh4B5PX99+IAf40mlQf1gHRXTXuqaOXyVCc=</code>.</p>
 </div></main>
-<footer><div class="wrap">Mosaikit is free software under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. · <a href="https://github.com/mosaikit/mosaikit.github.io">Source of this site</a></div></footer>
+<footer><div class="wrap">Mosaikit is free software under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. · <a href="https://github.com/mosaikit/mosaikit.github.io">Source of this site</a> (MPL 2.0)</div></footer>
 </body>
 </html>
