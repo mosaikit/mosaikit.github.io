@@ -87,6 +87,15 @@
   <section>
     <h2>Light, fast, agnostic, scalable</h2>
     <p class="lead">Mosaikit is designed to cost little to run and to stay out of your way, from a laptop to a cluster.</p>
+    <ul class="kpis">
+      <li><strong>31 <small>MB</small></strong><span>of memory at rest, the whole desktop platform running</span></li>
+      <li><strong>0.8 <small>s</small></strong><span>to restart, ready to sign in</span></li>
+      <li><strong>2.9 <small>s</small></strong><span>for the very first start: database, tenant and plugins created</span></li>
+      <li><strong>17 <small>MB</small></strong><span>to download the desktop release, plugins included</span></li>
+      <li><strong>42 <small>MB</small></strong><span>for the single executable of the platform</span></li>
+      <li><strong>179 <small>MB</small></strong><span>for the Docker image of a product</span></li>
+    </ul>
+    <p class="fine">Measured on version 1.0.3, Windows desktop release, an empty tenant, a developer laptop. Your numbers will vary with the hardware and the plugins you load.</p>
     <div class="grid">
       <div class="card"><h3>A very small footprint</h3><p>The platform is a compiled Rust server. The desktop edition runs on SQLite with no database to install, so a whole product fits on a laptop or a small virtual machine.</p></div>
       <div class="card"><h3>High performance</h3><p>Native code in the kernel, plugin logic compiled to WebAssembly with limited fuel and memory, and access checks done in the database. A plugin cannot slow down the others.</p></div>
