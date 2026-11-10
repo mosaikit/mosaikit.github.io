@@ -96,7 +96,7 @@
       <li><strong>179 <small>MB</small></strong><span>for the Docker image of a product</span></li>
     </ul>
     <p class="fine">Measured on version 1.0.3, Windows desktop release, an empty tenant, a developer laptop. Your numbers will vary with the hardware and the plugins you load.</p>
-    <div class="grid">
+    <div class="grid two">
       <div class="card"><h3>A very small footprint</h3><p>The platform is a compiled Rust server. The desktop edition runs on SQLite with no database to install, so a whole product fits on a laptop or a small virtual machine.</p></div>
       <div class="card"><h3>High performance</h3><p>Native code in the kernel, plugin logic compiled to WebAssembly with limited fuel and memory, and access checks done in the database. A plugin cannot slow down the others.</p></div>
       <div class="card"><h3>Agnostic by design</h3><p>The kernel knows nothing of your domain, your database vendor or your identity provider. The same plugins run on PostgreSQL or SQLite, and sign-in works with local accounts or any OpenID Connect provider.</p></div>
