@@ -133,3 +133,8 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--m
 .card.plugin.lang h3 { margin: 0 0 2px; }
 .card.plugin.lang .native { font-size: 1.05rem; font-weight: 600; color: var(--link); margin: 0 0 4px; }
 .plugins.langs { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+.card.plugin > p { font-size: .95rem; }
+.card.plugin .uses-title { margin: 12px 0 4px; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.card.plugin .uses { margin: 0; padding-left: 1.15em; color: var(--muted); font-size: .92rem; }
+.card.plugin .uses li { margin: 2px 0; }
