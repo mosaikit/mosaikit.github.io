@@ -97,3 +97,20 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--m
 .kpis small { font-size: 1rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
 .kpis span { display: block; margin-top: 6px; color: var(--muted); font-size: .92rem; }
 .fine { color: var(--muted); font-size: .85rem; margin: 6px 0 22px; }
+
+.group { margin-top: 32px; }
+.plugins { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+.card.plugin .carousel { position: relative; margin: -4px -4px 14px; }
+.card.plugin .carousel ul { list-style: none; margin: 0; padding: 0; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-radius: 10px; border: 1px solid var(--line); }
+.card.plugin .carousel ul::-webkit-scrollbar { display: none; }
+.card.plugin .carousel li { flex: 0 0 100%; scroll-snap-align: start; }
+.card.plugin .carousel img { display: block; width: 100%; height: auto; }
+.carousel button { position: absolute; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--link); font-size: 1.3rem; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+.carousel button:hover { background: var(--bg); }
+.carousel button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.carousel .prev { left: 8px; }
+.carousel .next { right: 8px; }
+.card.plugin .more { color: var(--muted); font-size: .92rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
+.chip { font-size: .78rem; padding: 2px 9px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .card.plugin .carousel ul { scroll-behavior: auto; } }
