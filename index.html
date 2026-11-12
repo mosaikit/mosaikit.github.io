@@ -41,7 +41,8 @@
     <li><strong>3 roles</strong><span>Administrator, Tenant Manager, User</span></li>
     <li><strong>2 databases</strong><span>PostgreSQL and SQLite, same rules</span></li>
     <li><strong>3 releases</strong><span>Desktop, Docker, Kubernetes</span></li>
-    <li><strong>20 plugins</strong><span>apps, layouts and 7 languages, ready to install</span></li>
+    <li><strong>31 plugins</strong><span>apps, layouts and 7 languages, ready to install</span></li>
+    <li><strong>1,457 tests</strong><span>automated, for the shell and the plugins, all passing</span></li>
   </ul>
 
   <section>
@@ -102,6 +103,20 @@
       <div class="card"><h3>Agnostic by design</h3><p>The kernel knows nothing of your domain, your database vendor or your identity provider. The same plugins run on PostgreSQL or SQLite, and sign-in works with local accounts or any OpenID Connect provider.</p></div>
       <div class="card"><h3>Scalable from one user to many tenants</h3><p>Start with the Desktop release, ship the Docker image, and move to Kubernetes when the load asks for it. The product and its plugins stay the same.</p></div>
     </div>
+  </section>
+
+  <section>
+    <h2>Tested like a product</h2>
+    <p class="lead">Every change runs the whole suite before it is merged: unit and integration tests on PostgreSQL and SQLite, the interface, and the browser with accessibility checks. Security and load are tested too.</p>
+    <ul class="kpis">
+      <li><strong>1,457</strong><span>automated tests, all passing: 807 for the platform and its tools, 434 for the plugins, 216 in the browser</span></li>
+      <li><strong>204</strong><span>security tests: access control and row-level security, isolation between tenants, the plugin sandbox, signed packages, sessions and second factor, public links, the SQL guard</span></li>
+      <li><strong>216</strong><span>browser tests of the shell and the plugins, with accessibility checks (axe) on the main views, in light and dark</span></li>
+      <li><strong>413</strong><span>of the Rust tests run again on SQLite, the database of the desktop edition</span></li>
+      <li><strong>663</strong><span>documented checks of the product, many with an automated twin</span></li>
+      <li><strong>1,000,000</strong><span>items, 20,000 people and 200 tenants in the load test, with 42 operations measured on PostgreSQL</span></li>
+    </ul>
+    <p class="fine">Counted on 12 November 2026 on the development tree of version 1.0.13: Rust 627 (platform) and 173 (plugins), interface 180 (platform) and 261 (plugins), browser 216. The security tests are the ones of the areas listed, counted by <code>tests/count-tests.py</code> in the repository, and the load test (<code>cargo xtask perf</code>) is run by hand on a developer laptop, see the performance report.</p>
   </section>
 
   <section>
