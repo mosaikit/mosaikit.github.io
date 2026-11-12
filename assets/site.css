@@ -127,3 +127,9 @@ footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--m
 #viewer .vthumbs img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top left; }
 #viewer button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { .card.plugin .thumb img { transition: none; } }
+
+.card.plugin.lang { flex-direction: row; align-items: center; gap: 16px; }
+.card.plugin.lang .flag { flex: 0 0 auto; width: 60px; height: 40px; border-radius: 5px; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+.card.plugin.lang h3 { margin: 0 0 2px; }
+.card.plugin.lang .native { font-size: 1.05rem; font-weight: 600; color: var(--link); margin: 0 0 4px; }
+.plugins.langs { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
